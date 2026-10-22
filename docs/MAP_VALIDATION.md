@@ -24,4 +24,8 @@
 
 ## 公开发布
 
-公开状态、Pages 部署与外网访问结果在实际完成后补充。
+- 用户明确授权后，仓库 `YHonc/any-retry` 已由 private 改为 public；未认证 GitHub API 确认 visibility 为 public，许可证识别为 MIT。
+- Pages 来源：`main` 分支 `/docs`；首次部署提交 `c30a0a1`，`pages build and deployment` 工作流 completed / success，Pages 状态 built。
+- 地图 HTML 与 `knowledge-graph.json` 均通过未认证公网 HTTP 200 检查；返回图谱为 Any Retry，14 节点、22 关系。
+- 公开网页已在浏览器加载，显示正确项目名、四层地图、七步导览和“重试引擎尚未实现”状态提示。
+- 在线地址：https://yhonc.github.io/any-retry/map/ 。README 已包含直接入口。
