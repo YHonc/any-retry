@@ -1,8 +1,0 @@
-{
-  "lastAnalyzedAt": "2026-10-22T04:14:39.683213+00:00",
-  "gitCommitHash": "4d79679b22c19369571e4c7d4e87320c6e7d8f74",
-  "version": "1.0.0",
-  "analyzedFiles": 4,
-  "includesWorkingTreeChanges": true,
-  "scope": "Documentation and planned design; no retry engine implemented."
-}

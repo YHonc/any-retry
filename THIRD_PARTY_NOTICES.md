@@ -15,19 +15,10 @@ points contain a clearly marked local-installation block; other bundled skill
 files retain their upstream content. The upstream runtime lives in ignored
 `.tools/understand-anything/` and is restored by `scripts/setup-map.ps1`.
 
-The public map is the upstream dashboard built in its existing demo/static mode,
-with a relative base URL and the Any Retry graph. Local publication adds a
-project title, status/attribution notice and license files. It does not turn the
-dashboard into an Any Retry runtime. The graph and tour describe this project's
-documents and proposed design; they are not an execution trace.
+The generated graph, static dashboard bundle and map publication scripts have
+been removed at the user's request. No dashboard dependency bundle is currently
+distributed by this repository. The retained skills keep their upstream MIT
+copyright and license notices.
 
-Bundled dependency license texts are collected into
-`docs/map/THIRD_PARTY_LICENSES.txt` during the map build. That file intentionally
-includes available licenses from the installed dependency tree, including some
-build dependencies; inclusion does not imply that every package ships in the
-browser bundle. Upstream's MIT license does not replace those dependencies'
-own license terms.
-
-Any Retry's original documents, graph curation and build scripts are covered by
-the root [MIT LICENSE](LICENSE). Preserve the upstream and dependency notices
-when redistributing the skills or generated map.
+Any Retry's original documents and setup script are covered by the root
+[MIT LICENSE](LICENSE). Preserve upstream notices when redistributing the skills.

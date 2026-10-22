@@ -2,12 +2,10 @@
 
 面向不同工具的通用重试核心，通过适配器接入具体运行环境。目标是在任务发生**可识别、可安全重试的失败**后，按受限策略继续执行，并让每一次决策可追踪、可停止、可验证。
 
-**[打开交互项目地图](https://YHonc.github.io/any-retry/map/)** · [开发指南](docs/PROJECT_GUIDE.md) · [真实进度](docs/STATUS.md) · [MIT 许可证](LICENSE)
-
-地图由 **Understand-Anything** 生成并用其 Dashboard 展示，包含项目文档、设计概念、分层与阅读导览。它展示当前规划及证据边界，不代表重试引擎已经运行。
+[开发指南](docs/PROJECT_GUIDE.md) · [真实进度](docs/STATUS.md) · [MIT 许可证](LICENSE)
 
 > **当前阶段：规划与文档初始化，尚不可作为重试工具运行。**
-> 状态核验日期：2026-10-22。已有文档、项目级分析技能和地图构建工具；没有重试引擎源码、工具适配器、业务启动命令或业务测试套件。
+> 状态核验日期：2026-10-22。已有文档和项目级分析技能；没有重试引擎源码、工具适配器、业务启动命令或业务测试套件。
 
 ## 目标
 
@@ -28,22 +26,12 @@
 | README | 已编写 | 本文件，可作为项目入口 |
 | 本地文件排除规则 | 已配置 | [.gitignore](.gitignore)，用于排除运行数据和本地凭据文件 |
 | Understand-Anything 项目级技能 | 已安装 | [.agents/skills/understand](.agents/skills/understand/SKILL.md)，固定上游版本，保留 MIT 版权 |
-| 项目地图与导览 | 已生成 | [在线查看](https://YHonc.github.io/any-retry/map/)；[图谱 JSON](.ua/knowledge-graph.json)，内容为文档与设计 |
-| 静态地图构建工具 | 已实现 | [维护说明](docs/MAP.md)，图谱校验与静态打包，不属于重试运行核心 |
 | 重试核心、状态机、策略调度 | 未实现 | 无源码、无运行证据 |
 | 适配器及模拟适配器 | 未实现 | 尚无已支持工具；首个真实适配器待选择 |
 | CLI、控制台与持久化 | 未实现 | 无可用启动入口、界面或恢复能力 |
 | 自动化测试与真实工具验收 | 未执行 | 尚无测试代码或端到端记录 |
 
-**当前可用的是开发文档和项目地图，自动重试功能尚不可用。** 其他目录或历史项目中的工具未在本仓库迁入、审查和验证，不计入这里的实现进度。
-
-## 先从地图理解项目
-
-1. [打开交互地图](https://YHonc.github.io/any-retry/map/)，从导览开始，了解目标与当前阶段。
-2. 点击节点查看摘要、关系及所在层；注意“已有文档”“待实现设计”等状态。
-3. 回到 [开发指南](docs/PROJECT_GUIDE.md) 阅读契约与验收条件。
-
-地图网页公开可读，不需要安装技能或提供 API Key。`.ua/knowledge-graph.json` 是可复用的图谱数据，`docs/map/` 是静态发布文件。GitHub 文件页只显示 HTML 源码，因此 README 链接指向 GitHub Pages。更新、局部安装和静态模式限制见 [地图维护说明](docs/MAP.md)。
+**当前可用的是开发文档，自动重试功能尚不可用。** 其他目录或历史项目中的工具未在本仓库迁入、审查和验证，不计入这里的实现进度。
 
 ## 实现原理
 
@@ -76,7 +64,7 @@ flowchart LR
 4. 选择一个真实工具，完成版本与接口核验，再实现适配器并做真实验收。
 5. 核心稳定后再考虑图形控制台和更多适配器。
 
-目前没有重试工具的安装或运行命令；地图工具的安装与构建命令单独放在 [地图维护说明](docs/MAP.md)。未来首次加入重试核心时，必须同步补齐依赖安装、启动、测试和停止方式。
+目前没有重试工具的安装或运行命令。未来首次加入重试核心时，必须同步补齐依赖安装、启动、测试和停止方式。
 
 ## 开发文档
 
@@ -87,4 +75,4 @@ flowchart LR
 
 ## 开源与致谢
 
-本项目采用 [MIT License](LICENSE)。项目地图与分析技能基于 [Understand-Anything](https://github.com/Egonex-AI/Understand-Anything)，保留其原始版权与 MIT 许可；依赖声明见 [第三方说明](THIRD_PARTY_NOTICES.md)。
+本项目采用 [MIT License](LICENSE)。保留的项目级分析技能来自 [Understand-Anything](https://github.com/Egonex-AI/Understand-Anything)，原始版权与 MIT 许可见 [第三方说明](THIRD_PARTY_NOTICES.md)。

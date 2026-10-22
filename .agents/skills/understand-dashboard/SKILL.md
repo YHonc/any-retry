@@ -9,11 +9,12 @@ argument-hint: "[project-path]"
 ## Any Retry project-local installation
 
 Resolve the Git project root and use only its `.tools/understand-anything/understand-anything-plugin`
-runtime. Run `scripts/setup-map.ps1` if absent. The public, read-only map is built
-with `scripts/build-map.ps1` into `docs/map/`, using upstream demo/static mode.
-For the full local dashboard, follow the instructions below with this explicit
-`PLUGIN_ROOT`; do not discover or install a global runtime. See `docs/MAP.md`
-and `THIRD_PARTY_NOTICES.md` for the local adaptation and attribution.
+runtime. Run `scripts/setup-map.ps1` if absent. The previously generated graph
+and public map have been removed at the user's request. Do not regenerate or
+republish them unless requested. For a newly requested local dashboard, first
+generate a graph, then follow the instructions below with this explicit
+`PLUGIN_ROOT`; do not discover or install a global runtime. Attribution is in
+`THIRD_PARTY_NOTICES.md`.
 
 Start the Understand Anything dashboard to visualize the knowledge graph for the current project.
 
