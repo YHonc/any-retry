@@ -1,0 +1,541 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/MAP.md",
+      "type": "document",
+      "name": "已有文档｜地图维护",
+      "filePath": "docs/MAP.md",
+      "lineRange": [
+        1,
+        58
+      ],
+      "summary": "地图用途、证据边界、项目级安装、静态构建与许可说明。",
+      "tags": [
+        "已有文档",
+        "证据入口",
+        "文档地图"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/PROJECT_GUIDE.md",
+      "type": "document",
+      "name": "已有文档｜总体开发指南",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        1,
+        239
+      ],
+      "summary": "目标、拟定架构、契约、状态语义、异常恢复与验收标准。",
+      "tags": [
+        "已有文档",
+        "证据入口",
+        "文档地图"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/STATUS.md",
+      "type": "document",
+      "name": "已有文档｜进度与证据",
+      "filePath": "docs/STATUS.md",
+      "lineRange": [
+        1,
+        47
+      ],
+      "summary": "记录业务核心仍为 P0，区分已完成辅助工具和未实现重试能力。",
+      "tags": [
+        "已有文档",
+        "证据入口",
+        "文档地图"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "concept:retry-core-goal",
+      "type": "concept",
+      "name": "已确认｜通用核心目标",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        5,
+        16
+      ],
+      "summary": "已确认通用重试核心加适配器方向；目标是可追踪、可停止、可验证，核心代码尚未实现。",
+      "tags": [
+        "已确认目标",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-adapter-contract",
+      "type": "concept",
+      "name": "待实现｜工具适配器协议",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        122,
+        141
+      ],
+      "summary": "拟定 validate_target、observe、submit_retry、query_submission 和 cancel 能力；真实工具尚未选择或接入。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-state-machine",
+      "type": "concept",
+      "name": "待实现｜任务状态机",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        143,
+        160
+      ],
+      "summary": "拟定 READY、RUNNING、WAITING_RETRY、PAUSED、NEEDS_ATTENTION 和终态约束。当前没有执行状态机代码。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-policy",
+      "type": "concept",
+      "name": "待实现｜失败分类与策略",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        162,
+        175
+      ],
+      "summary": "仅在失败类型明确、操作可安全重复且预算内才重试；未知结果需查询或人工处理。当前是设计。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-scheduler",
+      "type": "concept",
+      "name": "待实现｜等待与调度",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        82,
+        104
+      ],
+      "summary": "拟定等待到期后重新核对用户停止、目标状态和预算；图中关系不是实际运行调用链。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-storage-recovery",
+      "type": "concept",
+      "name": "待实现｜持久化与恢复",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        177,
+        185
+      ],
+      "summary": "建议 SQLite 原子保存任务、尝试和事件；重启先恢复观察，未知提交不直接重发。尚未实现。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-idempotency",
+      "type": "concept",
+      "name": "待实现｜提交幂等边界",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        106,
+        120
+      ],
+      "summary": "拟定唯一 attempt_id 和提交意图记录；提交歧义保留预算名额，不盲目重复提交，不承诺恰好一次。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-control",
+      "type": "concept",
+      "name": "待实现｜暂停恢复与停止",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        143,
+        160
+      ],
+      "summary": "暂停和停止阻止新的提交；取消在途执行需要适配器独立能力及确认，恢复前重新核验状态。",
+      "tags": [
+        "待实现设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-acceptance",
+      "type": "concept",
+      "name": "已编写｜分阶段验收方案",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        187,
+        219
+      ],
+      "summary": "已在文档定义核心必测场景和验证层级；这些是验收标准，业务测试与真实工具验收尚未执行。",
+      "tags": [
+        "已编写设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "concept:retry-roadmap",
+      "type": "concept",
+      "name": "已编写｜后续开发路线",
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "lineRange": [
+        187,
+        195
+      ],
+      "summary": "已规划 P0 文档基线、P1 核心与模拟器、P2 本地运行、P3 真实适配器、P4 扩展；当前业务阶段仍是 P0。",
+      "tags": [
+        "已编写设计",
+        "设计概念",
+        "事实边界"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "已有文档｜项目入口",
+      "filePath": "README.md",
+      "lineRange": [
+        1,
+        90
+      ],
+      "summary": "项目目标、当前可用性、拟定原理和地图入口；明确重试功能尚不可用。",
+      "tags": [
+        "已有文档",
+        "入口点",
+        "文档地图"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-core-goal",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-adapter-contract",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-state-machine",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-policy",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-scheduler",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-storage-recovery",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-idempotency",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-control",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-acceptance",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/PROJECT_GUIDE.md",
+      "target": "concept:retry-roadmap",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "总体开发指南在对应行范围说明此目标或设计；不代表已经实现。"
+    },
+    {
+      "source": "document:docs/MAP.md",
+      "target": "document:docs/PROJECT_GUIDE.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "文档引用或解释总体指南中的范围与设计。"
+    },
+    {
+      "source": "document:docs/STATUS.md",
+      "target": "document:docs/PROJECT_GUIDE.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "文档引用或解释总体指南中的范围与设计。"
+    },
+    {
+      "source": "concept:retry-state-machine",
+      "target": "concept:retry-control",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "设计关联：控制语义约束状态迁移。"
+    },
+    {
+      "source": "concept:retry-policy",
+      "target": "concept:retry-scheduler",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "设计关联：等待计划需要遵守策略预算。"
+    },
+    {
+      "source": "concept:retry-adapter-contract",
+      "target": "concept:retry-idempotency",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "设计关联：目标端能力决定提交是否可安全重复。"
+    },
+    {
+      "source": "concept:retry-storage-recovery",
+      "target": "concept:retry-idempotency",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "设计关联：提交意图与结果核对是恢复边界。"
+    },
+    {
+      "source": "concept:retry-roadmap",
+      "target": "concept:retry-acceptance",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "设计关联：各阶段以验收条件为推进依据。"
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:docs/PROJECT_GUIDE.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "README 提供文档阅读入口。"
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:docs/STATUS.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "README 提供文档阅读入口。"
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:docs/MAP.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "README 提供文档阅读入口。"
+    },
+    {
+      "source": "document:README.md",
+      "target": "concept:retry-core-goal",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "README 概述目标与后续开发方向。"
+    },
+    {
+      "source": "document:README.md",
+      "target": "concept:retry-roadmap",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "README 概述目标与后续开发方向。"
+    }
+  ],
+  "version": "1.0.0",
+  "project": {
+    "name": "Any Retry · 文档与设计地图",
+    "languages": [
+      "markdown"
+    ],
+    "frameworks": [],
+    "description": "通用重试核心与适配器的设计地图；业务核心尚未实现。图中仅为已有文档、已确认目标和拟定设计，不是运行Trace。",
+    "analyzedAt": "2026-10-22T04:14:39.683213+00:00",
+    "gitCommitHash": "4d79679b22c19369571e4c7d4e87320c6e7d8f74"
+  },
+  "layers": [
+    {
+      "id": "layer:project-status",
+      "name": "项目定位与进度",
+      "description": "已确认的产品目标与当前P0进度，不代表核心已实现。",
+      "nodeIds": [
+        "concept:retry-core-goal",
+        "document:docs/STATUS.md"
+      ]
+    },
+    {
+      "id": "layer:project-docs",
+      "name": "现有说明与地图",
+      "description": "真实存在的项目入口、开发指南与地图说明。",
+      "nodeIds": [
+        "document:README.md",
+        "document:docs/PROJECT_GUIDE.md",
+        "document:docs/MAP.md"
+      ]
+    },
+    {
+      "id": "layer:planned-core-design",
+      "name": "待实现核心设计",
+      "description": "适配器、状态机、策略、调度、存储、幂等和控制的拟定方案，不是部署的软件层。",
+      "nodeIds": [
+        "concept:retry-adapter-contract",
+        "concept:retry-state-machine",
+        "concept:retry-policy",
+        "concept:retry-scheduler",
+        "concept:retry-storage-recovery",
+        "concept:retry-idempotency",
+        "concept:retry-control"
+      ]
+    },
+    {
+      "id": "layer:planned-delivery",
+      "name": "拟定交付与验收",
+      "description": "已编写的阶段计划与验证标准，相关业务实现和测试尚未完成。",
+      "nodeIds": [
+        "concept:retry-acceptance",
+        "concept:retry-roadmap"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "项目概览",
+      "description": "了解通用重试核心目标。当前业务核心尚未实现，已有的是文档、技能和地图辅助工具。",
+      "nodeIds": [
+        "document:README.md",
+        "concept:retry-core-goal"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "现有文档与进度",
+      "description": "区分已完成的辅助能力和未实现的业务核心；图谱不是运行调用链或执行Trace。",
+      "nodeIds": [
+        "document:docs/STATUS.md",
+        "document:docs/MAP.md"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "适配器与状态机",
+      "description": "拟定适配器验证目标、观察事件、提交操作；核心状态机管理状态。这些模块尚未实现。",
+      "nodeIds": [
+        "document:docs/PROJECT_GUIDE.md",
+        "concept:retry-adapter-contract",
+        "concept:retry-state-machine"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "策略与等待调度",
+      "description": "规划失败分类、有限预算和等待后复核；仅明确可安全重试的失败进入自动重试路径。",
+      "nodeIds": [
+        "concept:retry-policy",
+        "concept:retry-scheduler"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "未知提交与恢复",
+      "description": "提交结果不明时先查询或人工确认；唯一尝试标识、提交意图和状态核对限制重复执行风险。",
+      "nodeIds": [
+        "concept:retry-idempotency",
+        "concept:retry-storage-recovery"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "控制与验收边界",
+      "description": "暂停和停止阻止新提交，不自动取消在途操作；文档检查与模拟、真实工具、业务验收分别记录。业务验收尚未执行。",
+      "nodeIds": [
+        "concept:retry-control",
+        "concept:retry-acceptance"
+      ]
+    },
+    {
+      "order": 7,
+      "title": "后续开发路线",
+      "description": "从P0文档推进到P1核心与模拟器、P2本地运行、P3真实适配器及P4扩展；路线不是已交付功能。",
+      "nodeIds": [
+        "concept:retry-roadmap",
+        "document:docs/PROJECT_GUIDE.md"
+      ]
+    }
+  ]
+}

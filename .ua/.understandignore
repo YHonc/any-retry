@@ -1,0 +1,13 @@
+# Scope: Any Retry's authored project documents and design; exclude tooling/generated output.
+.git/
+.tools/
+.agents/
+.ua/
+node_modules/
+docs/map/
+docs/index.html
+docs/MAP_VALIDATION.md
+scripts/
+.github/
+THIRD_PARTY_NOTICES.md
+third_party/

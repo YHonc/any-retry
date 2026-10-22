@@ -1,0 +1,25 @@
+{
+  "analyzedAt": "2026-10-22T04:14:39.683213+00:00",
+  "baseCommit": "4d79679b22c19369571e4c7d4e87320c6e7d8f74",
+  "includesWorkingTreeChanges": true,
+  "scope": "Four authored Markdown files; excludes generated artifacts and third-party tooling. No retry-engine implementation or runtime trace.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "d612a80e5d08786940487c4f1b06e3103c2a420487dbbdaf7baf8b7f4b6639b8"
+    },
+    {
+      "path": "docs/MAP.md",
+      "sha256": "d529b21c8066da09a1aa9f83e5e574221c5d5b74e3b5cdbffacabc4437cc5c8d"
+    },
+    {
+      "path": "docs/PROJECT_GUIDE.md",
+      "sha256": "ad980f154364deee31264001744b7262adc74122d8ba85d64204751ecfa971d1"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "sha256": "876a57b4e10e93413c10ff8691a75954b6a9de4e17a3e48af4396520e3a05a31"
+    }
+  ],
+  "hashNormalization": "UTF-8 text with LF line endings"
+}

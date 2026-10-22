@@ -37,3 +37,11 @@ dist/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Project-local upstream runtime and generated analysis scratch
+.tools/
+node_modules/
+.ua/intermediate/*
+!.ua/intermediate/scan-result.json
+.ua/tmp/
+.ua/.trash-*/

@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "4d79679b22c19369571e4c7d4e87320c6e7d8f74",
+  "generatedAt": "2026-10-22T04:14:40.269Z",
+  "files": {
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "d612a80e5d08786940487c4f1b06e3103c2a420487dbbdaf7baf8b7f4b6639b8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 91,
+      "hasStructuralAnalysis": false
+    },
+    "docs/MAP.md": {
+      "filePath": "docs/MAP.md",
+      "contentHash": "d529b21c8066da09a1aa9f83e5e574221c5d5b74e3b5cdbffacabc4437cc5c8d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": false
+    },
+    "docs/PROJECT_GUIDE.md": {
+      "filePath": "docs/PROJECT_GUIDE.md",
+      "contentHash": "ad980f154364deee31264001744b7262adc74122d8ba85d64204751ecfa971d1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 240,
+      "hasStructuralAnalysis": false
+    },
+    "docs/STATUS.md": {
+      "filePath": "docs/STATUS.md",
+      "contentHash": "876a57b4e10e93413c10ff8691a75954b6a9de4e17a3e48af4396520e3a05a31",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": false
+    }
+  }
+}
